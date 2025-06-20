@@ -1,14 +1,12 @@
-<div id="<%= dom_id alumni %>" class="w-full sm:w-auto my-5 space-y-5">
-  <div>
-    <strong class="block font-medium mb-1">First name:</strong>
-    <%= alumni.first_name %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Last name:</strong>
-    <%= alumni.last_name %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Email:</strong>
+<tr>
+  <td class="px-4 py-3">
+    <div class="flex items-center space-x-3">
+      <div>
+        <%= link_to alumni.first_name + " " + alumni.last_name, alumni_path(alumni), class: "hover:underline cursor-pointer text-gray-900 dark:text-white font-medium" %>
+      </div>
+    </div>
+  </td>
+  <td class="px-4 py-3">
     <%= alumni.email %>
-  </div>
-</div>
+  </td>
+</tr>
