@@ -19,11 +19,19 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <% if notice = flash[:notice] %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert = flash[:alert] %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <main>
       <%= yield %>
     </main>
   </body>
